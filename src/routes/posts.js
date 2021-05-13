@@ -1,10 +1,20 @@
 import express from "express";
-import controller from "#root/controllers/posts";
+import {
+  getAllPost,
+  createOnePost,
+  deleteOnePost,
+  updateOnePost,
+  getOnePost,
+} from "#root/controllers";
 
 const router = express.Router({ mergeParams: true });
 
-router.route("/").get(controller.getAll);
+router.route("/").get(getAllPost).post(createOnePost);
 
-router.route("/:postId").get(controller.getOne);
+router
+  .route("/:postId")
+  .get(getOnePost)
+  .patch(updateOnePost)
+  .delete(deleteOnePost);
 
 export default router;

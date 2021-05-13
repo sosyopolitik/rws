@@ -1,10 +1,16 @@
 import express from "express";
-import controller from "#root/controllers/users";
+import {
+  getAllUser,
+  getOneUser,
+  createOneUser,
+  deleteOneUser,
+  updateOneUser,
+} from "#root/controllers";
 
 const router = express.Router({ mergeParams: true });
 
-router.route("/").get(controller.getAll);
+router.route("/").get(getAllUser).post(createOneUser);
 
-router.route("/:id").get(controller.getOne);
+router.route("/:id").get(getOneUser).patch(updateOneUser).delete(deleteOneUser);
 
 export default router;

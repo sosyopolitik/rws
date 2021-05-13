@@ -1,11 +1,21 @@
-export const getAll = (req, res, next) => {
-  res.status(200).json({
-    msg: "Getting all posts",
-  });
-};
+import {
+  getAll,
+  createOne,
+  deleteOne,
+  getOne,
+  updateOne,
+  createMany,
+} from "#root/controllers/factory";
+import PostModel from "#root/models/posts";
 
-export const getOne = (req, res, next) => {
-  res.status(200).json({
-    msg: "Getting the post",
-  });
-};
+export const getAllPost = getAll(PostModel);
+
+export const createOnePost = createOne(PostModel);
+
+export const createManyPost = createMany(PostModel);
+
+export const deleteOnePost = deleteOne(PostModel);
+
+export const getOnePost = getOne(PostModel);
+
+export const updateOnePost = updateOne(PostModel);

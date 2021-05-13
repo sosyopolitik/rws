@@ -1,0 +1,14 @@
+POST http://localhost:3001/api/v1/posts HTTP/1.1
+content-type: application/json
+
+{
+    title:"ABD'de saldırıya uğrayan petrol hattının yeniden açılması için korsanlara 5 milyon dolar ödendiği iddiası",
+    slug:"abdde-saldiriya-ugrayan-petrol-hattinin-yeniden-acilmasi-icin-korsanlara-5-milyon-dolar-odendigi-iddiasi",
+    description:"Siber saldırı nedeniyle geçici olarak kapatılan ABD'nin en büyük petrol boru hatlarından Colonial Pipeline'ın yeniden faaliyete geçmesi için bilgisayar korsanlarına yaklaşık 5 milyon dolar ödendiği bildirildi.",
+
+}
+
+###
+
+POST http://localhost:3001/api/v1/user HTTP/1.1
+content-type: application/json
