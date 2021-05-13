@@ -1,6 +1,6 @@
-const express = require("express");
+import express from "express";
 
-const { userRoutes, postRoutes } = require("./routes");
+import { userRoutes, postRoutes } from "#root/routes";
 
 const app = express();
 
@@ -14,4 +14,4 @@ app.use("/", (req, res) => {
   });
 });
 
-module.exports = app;
+export default app;

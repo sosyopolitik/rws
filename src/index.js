@@ -1,7 +1,9 @@
-const mongoose = require("mongoose");
-require("dotenv").config({ path: "./.env" });
+import "@babel/polyfill";
+import "dotenv/config";
 
-const app = require("./app");
+import mongoose from "mongoose";
+
+import app from "#root/app";
 
 const DB = process.env.MONGO_DB_URI;
 

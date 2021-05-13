@@ -1,5 +1,5 @@
-const express = require("express");
-const controller = require("../controllers/users");
+import express from "express";
+import controller from "#root/controllers/users";
 
 const router = express.Router({ mergeParams: true });
 
@@ -7,4 +7,4 @@ router.route("/").get(controller.getAll);
 
 router.route("/:id").get(controller.getOne);
 
-module.exports = router;
+export default router;

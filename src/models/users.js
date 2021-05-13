@@ -1,15 +1,11 @@
-const crypto = require("crypto");
-const mongoose = require("mongoose");
-const validator = require("validator");
-const bcrypt = require("bcryptjs");
+import crypto from "crypto";
+import mongoose from "mongoose";
+import validator from "validator";
+import bcrypt from "bcryptjs";
 
 const userSchema = new mongoose.Schema(
   {
-    name: {
-      type: String,
-      required: true,
-    },
-    surname: {
+    displayName: {
       type: String,
       required: true,
     },
@@ -27,10 +23,6 @@ const userSchema = new mongoose.Schema(
         validator.isEmail,
         "Lütfen geçerli bir e-mail adresi giriniz.",
       ],
-    },
-    avatar: {
-      type: String,
-      default: "/default.jpg",
     },
     role: {
       type: String,
@@ -50,6 +42,11 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
       select: false,
+    },
+    status: {
+      type: String,
+      enum: ["banned", "closed", "active", "passive"],
+      default: "active",
     },
   },
   { timestamps: true }
@@ -105,4 +102,4 @@ userSchema.methods.createPasswordResetToken = function () {
 
 const User = mongoose.model("User", userSchema);
 
-module.exports = User;
+export default User;
