@@ -19,6 +19,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
       lowercase: true,
+      select: false,
       validate: [
         validator.isEmail,
         "Lütfen geçerli bir e-mail adresi giriniz.",

@@ -1,5 +1,5 @@
 import express from "express";
-import bodyParser from "body-parser";
+import cors from "cors";
 import { AppError } from "#root/utils";
 import globalErrorHandler from "#root/controllers/error";
 
@@ -12,6 +12,8 @@ import {
 } from "#root/routes";
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 

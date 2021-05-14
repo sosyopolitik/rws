@@ -11,10 +11,6 @@ const router = express.Router({ mergeParams: true });
 
 router.route("/").get(getAllPost).post(createOnePost);
 
-router
-  .route("/:postId")
-  .get(getOnePost)
-  .patch(updateOnePost)
-  .delete(deleteOnePost);
+router.route("/:id").get(getOnePost).patch(updateOnePost).delete(deleteOnePost);
 
 export default router;
