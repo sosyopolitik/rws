@@ -27,6 +27,6 @@ export const login = catchAsync(async (req, res, next) => {
     status: "success",
     message: "Giriş işlemi başarılı",
     token,
-    data: user,
+    doc: user,
   });
 });

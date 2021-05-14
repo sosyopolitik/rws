@@ -22,6 +22,6 @@ export const signup = catchAsync(async (req, res, next) => {
     status: "success",
     message: "Kayıt işlemi başarılı",
     token,
-    data: user,
+    doc: user,
   });
 });
