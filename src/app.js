@@ -9,6 +9,7 @@ import {
   tagRoutes,
   feedRoutes,
   authRoutes,
+  likeRoutes,
 } from "#root/routes";
 
 const app = express();
@@ -24,8 +25,9 @@ app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/posts", postRoutes);
 app.use("/api/v1/tags", tagRoutes);
 app.use("/api/v1/feed", feedRoutes);
+app.use("/api/v1/like", likeRoutes);
 
-app.use("/", (req, res) => {
+app.use("/api/v1/", (req, res) => {
   res.status(200).json({
     msg: "Hello world",
   });
