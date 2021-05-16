@@ -5,3 +5,4 @@ export * from "./tags";
 export * from "./feed";
 export * from "./authentication";
 export * from "./likes";
+export * from "./comments";
