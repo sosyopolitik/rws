@@ -3,6 +3,7 @@ import PostModel from "#root/models/posts";
 import { catchAsync } from "#root/utils";
 
 export const feed = catchAsync(async (req, res, next) => {
+  // TODO userID req objesinden gelecek.
   const userId = mongoose.Types.ObjectId("609ea9f0fb11bc1b1873d8f8");
   const docs = await PostModel.aggregate([
     {
