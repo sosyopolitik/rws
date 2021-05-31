@@ -10,8 +10,17 @@ const postSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    cover: {
+      type: String,
+      required: true,
+    },
     description: {
       type: String,
+      required: true,
+    },
+    category: {
+      type: mongoose.Types.ObjectId,
+      ref: "Category",
       required: true,
     },
     content: {

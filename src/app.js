@@ -10,6 +10,7 @@ import {
   feedRoutes,
   authRoutes,
   likeRoutes,
+  categoryRoutes,
 } from "#root/routes";
 
 const app = express();
@@ -23,6 +24,8 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/users", userRoutes);
 
 app.use("/api/v1/posts", postRoutes);
+app.use("/api/v1/categories", categoryRoutes);
+
 app.use("/api/v1/tags", tagRoutes);
 app.use("/api/v1/feed", feedRoutes);
 app.use("/api/v1/like", likeRoutes);
